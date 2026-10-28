@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMAL - Asociación de Amigos del Pueblo Saharaui de Don Benito</title>
     <style>
-        /* COLORES OFICIALES DE LA BANDERA SAHARAUI */
         :root {
             --sahara-black: #111111;
             --sahara-green: #008751;
@@ -27,7 +26,6 @@
             line-height: 1.6;
         }
 
-        /* CABECERA CON LOGO ORIGINAL */
         header {
             background-color: var(--sahara-black);
             color: var(--sahara-white);
@@ -43,7 +41,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 15px 20px;
         }
 
         .logo-block {
@@ -52,23 +50,15 @@
             gap: 15px;
         }
 
-        .logo-img {
-            width: 60px;
-            height: 60px;
-            background-color: white;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--sahara-green);
-        }
-
         .logo-text-main {
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             line-height: 1.2;
+            letter-spacing: 0.5px;
         }
 
         .logo-text-sub {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--sahara-green);
             font-weight: 600;
         }
@@ -76,7 +66,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 15px;
+            gap: 20px;
         }
 
         nav a {
@@ -98,17 +88,16 @@
             font-size: 1.05rem;
         }
 
-        /* ESTRUCTURA GENERAL */
         section {
-            padding: 50px 20px;
+            padding: 60px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 35px;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
             position: relative;
             padding-bottom: 10px;
         }
@@ -119,7 +108,7 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 70px;
+            width: 80px;
             height: 4px;
             background-color: var(--sahara-green);
         }
@@ -138,59 +127,63 @@
 
         .bg-light { background-color: var(--sahara-light); max-width: 100%; }
 
-        /* GALERÍAS POR SEPARADO */
-        .gallery-container {
-            margin-bottom: 40px;
-        }
+        .gallery-container { margin-bottom: 40px; }
 
         .gallery-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--sahara-green);
-            margin-bottom: 15px;
-            border-left: 4px solid var(--sahara-red);
-            padding-left: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--sahara-red);
+            padding-left: 12px;
+            font-weight: bold;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .gallery-item {
             background: white;
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-            border-top: 3px solid var(--sahara-green);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--sahara-green);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
         }
 
         .gallery-item-red { border-top-color: var(--sahara-red); }
 
         .gallery-item img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
             display: block;
         }
 
         .gallery-caption {
-            padding: 12px;
-            font-size: 0.9rem;
+            padding: 15px;
+            font-size: 0.95rem;
             background: white;
+            color: #333;
+            line-height: 1.4;
         }
 
-        /* VÍDEO INTEGRADO INCRASTRADO */
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* Relación 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             max-width: 800px;
-            margin: 20px auto 0;
+            margin: 25px auto 0;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            border: 3px solid var(--sahara-black);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border: 4px solid var(--sahara-black);
         }
 
         .video-wrapper iframe {
@@ -201,36 +194,50 @@
             height: 100%;
         }
 
-        /* BLOQUES DE INFORMACIÓN CONTRASTADA */
         .info-card {
             background: white;
             padding: 25px;
             border-radius: 6px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             border-left: 5px solid var(--sahara-red);
-            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .info-card ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .info-card li {
+            margin-bottom: 8px;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--sahara-red);
             color: white;
-            padding: 12px 25px;
+            padding: 12px 28px;
             text-decoration: none;
             border-radius: 4px;
             font-weight: bold;
             transition: background 0.3s;
-            border: none;
             margin-top: 15px;
+            border: none;
         }
 
         .btn:hover { background-color: #b81715; }
 
+        img.rounded {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
         footer {
             background-color: var(--sahara-black);
             color: var(--sahara-white);
-            padding: 40px 20px;
-            border-top: 5px solid var(--sahara-green);
+            padding: 50px 20px;
+            border-top: 6px solid var(--sahara-green);
         }
 
         .footer-grid {
@@ -238,22 +245,39 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
 
         .footer-col h4 {
             color: var(--sahara-green);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--sahara-red);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ SUPERIOR CON LOGO ORIGINAL -->
+    <!-- MENÚ SUPERIOR -->
     <header>
         <div class="nav-container">
             <div class="logo-block">
-                <img src="image_-pJatx.png" alt="Logo AMAL Original" class="logo-img">
                 <div>
                     <div class="logo-text-main">AMAL ASOCIACIÓN</div>
                     <div class="logo-text-sub">Pueblo Saharaui de Don Benito</div>
@@ -272,37 +296,35 @@
         </div>
     </header>
 
-    <!-- BANNER DE LLAMADA A LA ACCIÓN -->
+    <!-- BANNER DE EMERGENCIAS -->
     <div class="alert-banner">
         🚨 CAMPAÑA ACTIVA: Infórmate sobre el programa de Acogida Veraniega y las Caravanas de Alimentos.
     </div>
 
-    <!-- BLOQUE 1: QUÉ ES AMAL, AÑO DE INICIO Y PROPÓSITO -->
+    <!-- BLOQUE 1: QUÉ ES AMAL -->
     <section id="asociacion">
         <div class="grid-2">
             <div>
                 <h2 class="section-title" style="text-align:left; padding-bottom:10px;">¿Qué es AMAL y cuál es su Propósito?</h2>
                 <p style="margin-top: 15px; text-align: justify;">
-                    La <strong>Asociación AMAL</strong> de Amigos y Amigas del Pueblo Saharaui de Don Benito se fundó oficialmente en el <strong>año 2001</strong> con un objetivo muy claro: no dejar solo al pueblo saharaui refugiado. Somos una organización local formada por familias y voluntarios comprometidos con los Derechos Humanos y la Cooperación Internacional.
+                    La <strong>Asociación AMAL</strong> de Amigos y Amigas del Pueblo Saharaui de Don Benito se fundó oficialmente en el <strong>año 2001</strong> gracias a la implicación de familias y voluntarios comprometidos. Somos una organización sin ánimo de lucro volcada con los Derechos Humanos y la Cooperación Internacional.
                 </p>
                 <p style="margin-top: 10px; text-align: justify;">
-                    Nuestro propósito fundamental es doble: por un lado, dar cobertura alimentaria y sanitaria urgente a la población civil exiliada y, por otro, sensibilizar a la comunidad extremeña sobre este conflicto político histórico, construyendo puentes directos de ayuda desde Don Benito.
+                    Nuestro propósito fundamental es dar cobertura alimentaria y sanitaria urgente a la población civil exiliada en los campamentos de refugiados, al mismo tiempo que sensibilizamos a la comunidad de Don Benito y Extremadura sobre la situación del Sahara Occidental mediante actividades culturales, casetas informativas y presencia social activa.
                 </p>
             </div>
             <div>
-                <img src="image_73fV6r.png" alt="Caseta Oficial AMAL Don Benito" class="rounded">
+                <img src="https://unsplash.com" alt="Solidaridad y Comunidad" class="rounded">
             </div>
         </div>
     </section>
 
-    <!-- BLOQUE 2: TODAS LAS FOTOS ORGANIZADAS POR SEPARADO -->
+    <!-- BLOQUE 2: GALERÍAS FOTOGRÁFICAS SEPARADAS -->
     <div class="bg-light" id="galerias">
         <section>
-            <h2 class="section-title">Galería Fotográfica Oficial</h2>
-            <p style="text-align:center; max-width:700px; margin:-20px auto 40px; color:#555;">Todas vuestras vivencias y labores logísticas organizadas estrictamente por categorías independientes.</p>
+            <h2 class="section-title">Galería Fotográfica</h2>
+            <p style="text-align:center; max-width:700px; margin:-20px auto 40px; color:#555;">Toda la labor humanitaria, festejos locales y realidades organizados estrictamente en bloques independientes.</p>
 
-            <!-- CATEGORÍA A: VACACIONES EN PAZ -->
+            <!-- SECCIÓN A: VACACIONES EN PAZ -->
             <div class="gallery-container">
                 <h3 class="gallery-subtitle">A. Niños y Niñas en Vacaciones en Paz (Extremadura)</h3>
-                <div class="gallery-grid">
-                    <div class="gallery-item"><img src="image_1506IN.png" alt="Juegos de agua en Don Benito"><div class="gallery-caption"><strong>Actividades locales:</strong> Jornadas grupales de juegos de agua y bailes colectivos con monitores.</div></div>
