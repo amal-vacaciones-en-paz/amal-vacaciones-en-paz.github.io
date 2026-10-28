@@ -1,229 +1,308 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AMAL Vacaciones en Paz | Solidaridad y convivencia</title>
-  <meta name="description" content="Conoce AMAL Vacaciones en Paz: nuestra asociación, el programa de acogida temporal, la historia del pueblo saharaui y cómo colaborar de forma solidaria.">
-  <meta name="theme-color" content="#244f40">
-  <meta property="og:title" content="AMAL Vacaciones en Paz">
-  <meta property="og:description" content="Un verano que une corazones. Conoce el proyecto, descubre cómo acoger y colabora con AMAL.">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"NGO",
-    "name":"AMAL Vacaciones en Paz",
-    "description":"Asociación vinculada al programa Vacaciones en Paz y a iniciativas solidarias relacionadas con el pueblo saharaui.",
-    "url":"https://example.org/",
-    "email":"CAMBIAR-POR-CORREO-OFICIAL",
-    "nonprofitStatus":"Nonprofit501c3"
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMAL - Asociación de Amigos del Pueblo Saharaui de Don Benito</title>
+    <style>
+        /* COLORES OFICIALES DE LA BANDERA SAHARAUI */
+        :root {
+            --sahara-black: #111111;
+            --sahara-green: #008751;
+            --sahara-red: #E42320;
+            --sahara-white: #FFFFFF;
+            --sahara-light: #F4F6F4;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--sahara-white);
+            color: var(--sahara-black);
+            line-height: 1.6;
+        }
+
+        /* CABECERA CON LOGO ORIGINAL */
+        header {
+            background-color: var(--sahara-black);
+            color: var(--sahara-white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 5px solid var(--sahara-red);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo-block {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--sahara-green);
+        }
+
+        .logo-text-main {
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .logo-text-sub {
+            font-size: 0.85rem;
+            color: var(--sahara-green);
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+
+        nav a {
+            color: var(--sahara-white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--sahara-green); }
+
+        .alert-banner {
+            background-color: var(--sahara-red);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        /* ESTRUCTURA GENERAL */
+        section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 35px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background-color: var(--sahara-green);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+        }
+
+        .bg-light { background-color: var(--sahara-light); max-width: 100%; }
+
+        /* GALERÍAS POR SEPARADO */
+        .gallery-container {
+            margin-bottom: 40px;
+        }
+
+        .gallery-subtitle {
+            font-size: 1.3rem;
+            color: var(--sahara-green);
+            margin-bottom: 15px;
+            border-left: 4px solid var(--sahara-red);
+            padding-left: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+            border-top: 3px solid var(--sahara-green);
+        }
+
+        .gallery-item-red { border-top-color: var(--sahara-red); }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 12px;
+            font-size: 0.9rem;
+            background: white;
+        }
+
+        /* VÍDEO INTEGRADO INCRASTRADO */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 20px auto 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            border: 3px solid var(--sahara-black);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* BLOQUES DE INFORMACIÓN CONTRASTADA */
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--sahara-red);
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--sahara-red);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: none;
+            margin-top: 15px;
+        }
+
+        .btn:hover { background-color: #b81715; }
+
+        footer {
+            background-color: var(--sahara-black);
+            color: var(--sahara-white);
+            padding: 40px 20px;
+            border-top: 5px solid var(--sahara-green);
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--sahara-green);
+            margin-bottom: 12px;
+        }
+    </style>
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#inicio" aria-label="AMAL, inicio">
-        <span class="brand-mark" aria-hidden="true">A</span>
-        <span><strong>AMAL</strong><small>VACACIONES EN PAZ</small></span>
-      </a>
-      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menú</button>
-      <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
-        <a href="#asociacion">La asociación</a>
-        <a href="#vacaciones">Vacaciones en Paz</a>
-        <a href="#sahara">Pueblo saharaui</a>
-        <a href="#acoger">Quiero acoger</a>
-        <a href="#contacto">Contacto</a>
-        <a class="nav-donate" href="#donar">Colabora / Dona</a>
-      </nav>
+
+    <!-- MENÚ SUPERIOR CON LOGO ORIGINAL -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-block">
+                <img src="image_-pJatx.png" alt="Logo AMAL Original" class="logo-img">
+                <div>
+                    <div class="logo-text-main">AMAL ASOCIACIÓN</div>
+                    <div class="logo-text-sub">Pueblo Saharaui de Don Benito</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#asociacion">Quiénes Somos</a></li>
+                    <li><a href="#galerias">Fotos Separadas</a></li>
+                    <li><a href="#vacaciones-info">Acoger Niños</a></li>
+                    <li><a href="#campamentos">Realidad Tinduf</a></li>
+                    <li><a href="#historia-sahara">Conflicto Sahara</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BANNER DE LLAMADA A LA ACCIÓN -->
+    <div class="alert-banner">
+        🚨 CAMPAÑA ACTIVA: Infórmate sobre el programa de Acogida Veraniega y las Caravanas de Alimentos.
     </div>
-  </header>
 
-  <main id="contenido">
-    <section class="hero" id="inicio">
-      <div class="hero-texture" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Solidaridad · Convivencia · Esperanza</p>
-          <h1>Un verano que <em>une corazones.</em></h1>
-          <p class="hero-lede">AMAL Vacaciones en Paz trabaja para acercar personas y culturas, promover la solidaridad y dar a conocer la realidad del pueblo saharaui.</p>
-          <div class="hero-actions">
-            <a class="button button-light" href="#vacaciones">Conoce el proyecto <span aria-hidden="true">↗</span></a>
-            <a class="text-link light-link" href="#donar">Quiero colaborar</a>
-          </div>
-          <p class="hero-note">La acogida temporal es una experiencia de convivencia; no es una adopción.</p>
+    <!-- BLOQUE 1: QUÉ ES AMAL, AÑO DE INICIO Y PROPÓSITO -->
+    <section id="asociacion">
+        <div class="grid-2">
+            <div>
+                <h2 class="section-title" style="text-align:left; padding-bottom:10px;">¿Qué es AMAL y cuál es su Propósito?</h2>
+                <p style="margin-top: 15px; text-align: justify;">
+                    La <strong>Asociación AMAL</strong> de Amigos y Amigas del Pueblo Saharaui de Don Benito se fundó oficialmente en el <strong>año 2001</strong> con un objetivo muy claro: no dejar solo al pueblo saharaui refugiado. Somos una organización local formada por familias y voluntarios comprometidos con los Derechos Humanos y la Cooperación Internacional.
+                </p>
+                <p style="margin-top: 10px; text-align: justify;">
+                    Nuestro propósito fundamental es doble: por un lado, dar cobertura alimentaria y sanitaria urgente a la población civil exiliada y, por otro, sensibilizar a la comunidad extremeña sobre este conflicto político histórico, construyendo puentes directos de ayuda desde Don Benito.
+                </p>
+            </div>
+            <div>
+                <img src="image_73fV6r.png" alt="Caseta Oficial AMAL Don Benito" class="rounded">
+            </div>
         </div>
-        <div class="hero-art" role="img" aria-label="Ilustración de un sol sobre dunas del desierto">
-          <div class="sun"></div><div class="dune dune-back"></div><div class="dune dune-front"></div>
-          <div class="art-caption"><span>AMAL</span><span>Unidos por la solidaridad</span></div>
-        </div>
-      </div>
     </section>
 
-    <section class="intro section" id="asociacion">
-      <div class="container intro-grid">
-        <div>
-          <p class="eyebrow">Quiénes somos</p>
-          <h2>Una comunidad que transforma la solidaridad en acción.</h2>
-        </div>
-        <div class="intro-body">
-          <p>AMAL Vacaciones en Paz es una asociación comprometida con la convivencia, la sensibilización y el apoyo a iniciativas solidarias relacionadas con el pueblo saharaui.</p>
-          <p>Queremos crear vínculos entre comunidades, dar a conocer la historia saharaui y facilitar que más personas descubran cómo participar, acoger y colaborar.</p>
-          <p class="small-note"><strong>Completar antes de publicar:</strong> añade aquí la historia real de AMAL, su localidad, objetivos estatutarios, equipo y actividades verificadas.</p>
-        </div>
-      </div>
-    </section>
+    <!-- BLOQUE 2: TODAS LAS FOTOS ORGANIZADAS POR SEPARADO -->
+    <div class="bg-light" id="galerias">
+        <section>
+            <h2 class="section-title">Galería Fotográfica Oficial</h2>
+            <p style="text-align:center; max-width:700px; margin:-20px auto 40px; color:#555;">Todas vuestras vivencias y labores logísticas organizadas estrictamente por categorías independientes.</p>
 
-    <section class="section section-soft" id="vacaciones">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">El programa</p>
-          <h2>¿Qué es Vacaciones en Paz?</h2>
-          <p>Un programa de acogida temporal durante el verano que permite a menores saharauis convivir con familias y participar en experiencias de descanso, atención y encuentro cultural.</p>
-        </div>
-        <div class="three-cards">
-          <article class="info-card">
-            <span class="card-number">01</span>
-            <h3>Convivir</h3>
-            <p>Compartir la vida cotidiana, conocer otras costumbres y construir relaciones basadas en el respeto mutuo.</p>
-          </article>
-          <article class="info-card">
-            <span class="card-number">02</span>
-            <h3>Cuidar</h3>
-            <p>Ofrecer durante el periodo autorizado un entorno familiar acogedor y atender las necesidades del menor según las indicaciones del programa.</p>
-          </article>
-          <article class="info-card">
-            <span class="card-number">03</span>
-            <h3>Crear vínculos</h3>
-            <p>Favorecer la amistad, el aprendizaje intercultural y una relación solidaria que respete la identidad y la familia de origen.</p>
-          </article>
-        </div>
-        <p class="disclaimer">Las fechas, condiciones y procedimientos pueden variar según la convocatoria. Contacta con AMAL para conocer los requisitos vigentes.</p>
-      </div>
-    </section>
-
-    <section class="section" id="acoger">
-      <div class="container split">
-        <div class="split-visual family-visual">
-          <div class="visual-circle"></div>
-          <div class="visual-quote">Acoger es abrir la puerta a una experiencia compartida.</div>
-        </div>
-        <div class="split-copy">
-          <p class="eyebrow">Da el paso</p>
-          <h2>¿Te gustaría acoger?</h2>
-          <p>La acogida temporal requiere compromiso, preparación y acompañamiento. AMAL podrá explicarte el proceso y orientarte sobre la convocatoria que corresponda.</p>
-          <ol class="steps">
-            <li><span>1</span><div><strong>Infórmate</strong><p>Solicita una primera conversación con la asociación.</p></div></li>
-            <li><span>2</span><div><strong>Conoce los requisitos</strong><p>Consulta la documentación, plazos, entrevistas y comprobaciones aplicables.</p></div></li>
-            <li><span>3</span><div><strong>Prepárate con acompañamiento</strong><p>Participa en las orientaciones y sigue las indicaciones del equipo responsable.</p></div></li>
-          </ol>
-          <a class="button button-dark" href="#contacto">Quiero recibir información</a>
-          <p class="small-note">La acogida no es una adopción y no debe prometerse una plaza hasta que la organización responsable confirme la selección.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-green" id="sahara">
-      <div class="container">
-        <div class="section-heading section-heading-light">
-          <p class="eyebrow">Historia e identidad</p>
-          <h2>Conocer al pueblo saharaui.</h2>
-          <p>Una historia, una cultura y una identidad que merecen ser conocidas más allá de las noticias sobre el desplazamiento y la emergencia humanitaria.</p>
-        </div>
-        <div class="history-grid">
-          <article>
-            <span class="history-year">Antes de 1975</span>
-            <h3>Un territorio con identidad propia</h3>
-            <p>El Sáhara Occidental fue administrado por España durante el periodo colonial. La población saharaui cuenta con una cultura, tradiciones y vínculos sociales propios.</p>
-          </article>
-          <article>
-            <span class="history-year">1975–1976</span>
-            <h3>Conflicto y desplazamiento</h3>
-            <p>Tras los acontecimientos de 1975, la retirada española y la expansión del conflicto, numerosos saharauis huyeron hacia la zona de Tinduf, en Argelia.</p>
-          </article>
-          <article>
-            <span class="history-year">Hoy</span>
-            <h3>Una situación aún pendiente</h3>
-            <p>El Sáhara Occidental continúa en la lista de territorios no autónomos de Naciones Unidas. El futuro político del territorio sigue sin resolverse.</p>
-          </article>
-        </div>
-        <p class="source-note">Para profundizar, consulta fuentes como Naciones Unidas, ACNUR y el Programa Mundial de Alimentos. Revisa y actualiza esta información antes de publicar.</p>
-      </div>
-    </section>
-
-    <section class="section" id="campamentos">
-      <div class="container split split-reverse">
-        <div class="split-copy">
-          <p class="eyebrow">Una realidad que no debemos olvidar</p>
-          <h2>La vida en los campamentos de Tinduf.</h2>
-          <p>Las familias refugiadas afrontan dificultades prolongadas para cubrir necesidades básicas. El clima desértico puede traer episodios de calor extremo; las temperaturas pueden superar los 50 °C en periodos de verano.</p>
-          <div class="need-list">
-            <div><span class="need-icon">☼</span><p><strong>Calor extremo</strong><br>Las altas temperaturas dificultan la vida diaria y aumentan los riesgos para la salud.</p></div>
-            <div><span class="need-icon">≈</span><p><strong>Agua y saneamiento</strong><br>El acceso fiable al agua potable y a servicios básicos sigue siendo una necesidad humanitaria.</p></div>
-            <div><span class="need-icon">♡</span><p><strong>Alimentación y salud</strong><br>La asistencia alimentaria y los servicios de salud son fundamentales para las familias refugiadas.</p></div>
-          </div>
-          <p class="small-note">Las condiciones varían entre familias y a lo largo del tiempo. Evitamos cifras sin fecha o fuentes verificables y tratamos a las personas refugiadas con dignidad, no como imágenes de sufrimiento.</p>
-        </div>
-        <div class="split-visual desert-visual">
-          <div class="desert-sun"></div><div class="desert-hill"></div><div class="desert-hill hill-two"></div>
-          <div class="desert-label"><strong>Escuchar · Comprender · Colaborar</strong><span>La solidaridad empieza por conocer.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="donate-section" id="donar">
-      <div class="container donate-grid">
-        <div>
-          <p class="eyebrow eyebrow-light">Colabora con AMAL</p>
-          <h2>Tu apoyo puede ayudar a sostener nuestros proyectos.</h2>
-          <p>Las donaciones se destinarán a los proyectos y actividades solidarias de AMAL, de acuerdo con los fines de la asociación y la información que publiquemos sobre el uso de los fondos.</p>
-          <p class="donate-caution">Antes de activar este apartado, configura un medio de pago oficial a nombre de la asociación y publica información transparente sobre las comisiones, los recibos y el destino de las aportaciones.</p>
-        </div>
-        <div class="donate-panel">
-          <span class="donate-heart" aria-hidden="true">♡</span>
-          <h3>Quiero colaborar</h3>
-          <p>Elige una forma segura de apoyar a AMAL.</p>
-          <!-- Sustituye el enlace de abajo por el enlace oficial de donación creado por AMAL en su proveedor de pagos. -->
-          <a class="button button-light button-wide" href="mailto:CAMBIAR-POR-CORREO-OFICIAL?subject=Informaci%C3%B3n%20sobre%20donaciones%20a%20AMAL">Solicitar información para donar</a>
-          <p class="tiny-note">El botón de pago todavía no está activado. No introduzcas datos bancarios en esta web estática.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="contacto">
-      <div class="container contact-grid">
-        <div>
-          <p class="eyebrow">Hablemos</p>
-          <h2>Contacta con AMAL.</h2>
-          <p>¿Quieres acoger, colaborar, organizar una actividad o conocer mejor nuestro trabajo? Escríbenos y te indicaremos cómo continuar.</p>
-          <div class="contact-detail"><span>Correo</span><a href="mailto:CAMBIAR-POR-CORREO-OFICIAL">CAMBIAR-POR-CORREO-OFICIAL</a></div>
-          <div class="contact-detail"><span>Localidad</span><strong>AÑADIR LOCALIDAD DE AMAL</strong></div>
-          <div class="contact-detail"><span>Redes sociales</span><strong>AÑADIR ENLACES OFICIALES</strong></div>
-        </div>
-        <div class="contact-box">
-          <h3>Antes de publicar</h3>
-          <p>Completa los datos oficiales de la asociación y elimina todos los textos de ejemplo. Para proteger los datos personales, este sitio no recoge formularios ni almacena información de visitantes.</p>
-          <a class="button button-dark" href="mailto:CAMBIAR-POR-CORREO-OFICIAL?subject=Consulta%20sobre%20AMAL">Escribir un correo</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-top">
-      <a class="brand brand-footer" href="#inicio"><span class="brand-mark">A</span><span><strong>AMAL</strong><small>VACACIONES EN PAZ</small></span></a>
-      <p>Solidaridad que crea vínculos.</p>
-      <a href="#inicio" class="back-top">Volver arriba ↑</a>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year"></span> AMAL Vacaciones en Paz</span>
-      <span>Política de privacidad · Aviso legal · Cookies: completar antes de publicar</span>
-    </div>
-  </footer>
-  <script src="script.js"></script>
-</body>
-</html>
+            <!-- CATEGORÍA A: VACACIONES EN PAZ -->
+            <div class="gallery-container">
+                <h3 class="gallery-subtitle">A. Niños y Niñas en Vacaciones en Paz (Extremadura)</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="image_1506IN.png" alt="Juegos de agua en Don Benito"><div class="gallery-caption"><strong>Actividades locales:</strong> Jornadas grupales de juegos de agua y bailes colectivos con monitores.</div></div>
