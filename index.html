@@ -150,18 +150,13 @@
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             border-top: 4px solid var(--sahara-green);
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
         }
 
         .gallery-item-red { border-top-color: var(--sahara-red); }
 
         .gallery-item img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
             display: block;
         }
@@ -203,14 +198,8 @@
             margin-top: 20px;
         }
 
-        .info-card ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        .info-card li {
-            margin-bottom: 8px;
-        }
+        .info-card ul { margin-left: 20px; margin-top: 10px; }
+        .info-card li { margin-bottom: 8px; }
 
         .btn {
             display: inline-block;
@@ -231,6 +220,8 @@
             width: 100%;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            height: 350px;
+            object-fit: cover;
         }
 
         footer {
@@ -257,11 +248,7 @@
             display: inline-block;
         }
 
-        .footer-col p {
-            margin-bottom: 10px;
-            color: #ccc;
-        }
-
+        .footer-col p { margin-bottom: 10px; color: #ccc; }
         .footer-bottom {
             text-align: center;
             margin-top: 40px;
@@ -296,7 +283,6 @@
         </div>
     </header>
 
-    <!-- BANNER DE EMERGENCIAS -->
     <div class="alert-banner">
         🚨 CAMPAÑA ACTIVA: Infórmate sobre el programa de Acogida Veraniega y las Caravanas de Alimentos.
     </div>
@@ -310,11 +296,12 @@
                     La <strong>Asociación AMAL</strong> de Amigos y Amigas del Pueblo Saharaui de Don Benito se fundó oficialmente en el <strong>año 2001</strong> gracias a la implicación de familias y voluntarios comprometidos. Somos una organización sin ánimo de lucro volcada con los Derechos Humanos y la Cooperación Internacional.
                 </p>
                 <p style="margin-top: 10px; text-align: justify;">
-                    Nuestro propósito fundamental es dar cobertura alimentaria y sanitaria urgente a la población civil exiliada en los campamentos de refugiados, al mismo tiempo que sensibilizamos a la comunidad de Don Benito y Extremadura sobre la situación del Sahara Occidental mediante actividades culturales, casetas informativas y presencia social activa.
+                    Nuestro propósito fundamental es dar cobertura alimentaria y sanitaria urgente a la población civil exiliada en los campamentos de refugiados, al mismo tiempo que sensibilizamos a la comunidad de Don Benito y Extremadura sobre la situación del Sahara Occidental mediante actividades culturales, casetas informativas y presencia social activa en festejos.
                 </p>
             </div>
             <div>
-                <img src="https://unsplash.com" alt="Solidaridad y Comunidad" class="rounded">
+                <!-- FOTO REAL: CASETA OFICIAL DE LA FERIA DE AMAL -->
+                <img src="https://ibb.co" alt="Caseta Oficial AMAL Don Benito" class="rounded">
             </div>
         </div>
     </section>
@@ -322,9 +309,11 @@
     <!-- BLOQUE 2: GALERÍAS FOTOGRÁFICAS SEPARADAS -->
     <div class="bg-light" id="galerias">
         <section>
-            <h2 class="section-title">Galería Fotográfica</h2>
+            <h2 class="section-title">Galería Fotográfica Oficial</h2>
             <p style="text-align:center; max-width:700px; margin:-20px auto 40px; color:#555;">Toda la labor humanitaria, festejos locales y realidades organizados estrictamente en bloques independientes.</p>
 
             <!-- SECCIÓN A: VACACIONES EN PAZ -->
             <div class="gallery-container">
-                <h3 class="gallery-subtitle">A. Niños y Niñas en Vacaciones en Paz (Extremadura)</h3>
+                <h3 class="gallery-subtitle">A. Niños y Niñas en Vacaciones en Paz</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
